@@ -1,50 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
-<div x-data="todos()">
-    <h1>My Tasks</h1>
-    <div class="todo-section">
-        <div class="incompleted-todos">
-            <div>TO-DO</div>
-            <ul>
-                <template
-                    x-for="(todo, index) in todos"
-                    :key="index"
-                >
-                    <li>
-                        <div>
-                            <div 
-                                x-text="todo.title"
-                            >
-                            </div>
-                            <input 
-                                type="checkbox"
-                                @change="completeTodo(index)"
-                            >
-                        </div>
-                    </li>
-                </template>
-            </ul>
-        </div>
-        <div class="completed-todos">
-            <div>COMPLETED</div>
-            <ul>
-                <template
-                    x-for="(todo, index) in completedTodos"
-                    :key="index"
-                >
-                    <li>
-                        <div 
-                            class="line-through"
-                            x-text="todo.title"
-                        >
-                        </div> 
-                    </li>
-                </template>
-            </ul>
-        </div>
+<div 
+    x-data="todos()"
+>
+    <h1
+        class="p-4 text-4xl font-bold"
+    >
+        My Tasks
+    </h1>
+
+    <div>TO-DO</div>
+    <div class="grid grid-cols-2">
+        <template 
+            class=""
+            x-for="(todo, index) in todos"
+            :key="index"
+        >
+            <div 
+                class="bg-blue-100"
+                x-text="todo.title"
+            >
+            </div>
+            <input 
+                class="bg-green-100"
+                type="checkbox"
+                @change="completeTodo(index)"
+            >
+        </template>
     </div>
-    <div class="todo-add-section">
+
+    <div>COMPLETED</div>
+    <ul>
+        <template
+            x-for="(todo, index) in completedTodos"
+            :key="index"
+        >
+            <li>
+                <div 
+                    class="line-through"
+                    x-text="todo.title"
+                >
+                </div> 
+            </li>
+        </template>
+    </ul>
+        
+    <div class="p-4 bg-gray-200">
         <label>
             New Task
         </label>
@@ -54,11 +56,13 @@
         >
         <button
             @click="addTodo()"
+            class="bg-gray-100"
         >
             Add
         </button>
     </div>
 </div>
+
 <script>
     function todos() {
         return {
