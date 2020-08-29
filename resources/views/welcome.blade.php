@@ -62,10 +62,7 @@
         </button>
     </div>
 </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> f208f198a2bd016aabf2977bf24d20c986405ac8
 <script>
     function todos() {
         return {
