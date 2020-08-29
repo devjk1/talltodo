@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
 <div 
     x-data="todos()"
 >
@@ -48,52 +47,6 @@
     </ul>
         
     <div class="p-4 bg-gray-200">
-=======
-<div x-data="todos()">
-    <h1>My Tasks</h1>
-    <div class="todo-section">
-        <div class="incompleted-todos">
-            <div>TO-DO</div>
-            <ul>
-                <template
-                    x-for="(todo, index) in todos"
-                    :key="index"
-                >
-                    <li>
-                        <div>
-                            <div 
-                                x-text="todo.title"
-                            >
-                            </div>
-                            <input 
-                                type="checkbox"
-                                @change="completeTodo(index)"
-                            >
-                        </div>
-                    </li>
-                </template>
-            </ul>
-        </div>
-        <div class="completed-todos">
-            <div>COMPLETED</div>
-            <ul>
-                <template
-                    x-for="(todo, index) in completedTodos"
-                    :key="index"
-                >
-                    <li>
-                        <div 
-                            class="line-through"
-                            x-text="todo.title"
-                        >
-                        </div> 
-                    </li>
-                </template>
-            </ul>
-        </div>
-    </div>
-    <div class="todo-add-section">
->>>>>>> f208f198a2bd016aabf2977bf24d20c986405ac8
         <label>
             New Task
         </label>
@@ -103,10 +56,7 @@
         >
         <button
             @click="addTodo()"
-<<<<<<< HEAD
             class="bg-gray-100"
-=======
->>>>>>> f208f198a2bd016aabf2977bf24d20c986405ac8
         >
             Add
         </button>
