@@ -3,7 +3,7 @@
 @section('content')
 <div 
     class="h-screen w-screen flex flex-col"
-    x-data="todo()"
+    x-data="todos()"
 >
     <!-- TOP SECTION -->
     <div class="bg-gray-100 flex-grow">
@@ -16,8 +16,22 @@
             <div class="text-gray-400 font-medium text-lg tracking-wider">
                 TO-DO
             </div>
-            <div class="border-2 border-gray-300 rounded-lg mt-2">
-                1
+            <div class="grid grid-cols-12 border-2 border-gray-300 rounded-lg mt-2">
+                <template 
+                    x-for="(todo, index) in todos"
+                    :key="index"
+                >
+                    <div 
+                        class="col-span-11"
+                        x-text="todo.title"
+                    >
+                    </div>
+                    <input 
+                        class="col-span-1 ml-auto"
+                        type="checkbox"
+                        @change="completeTodo(index)"
+                    >
+                </template>
             </div>
             <!-- COMPLETED -->
             <div class="mt-8 text-gray-400 font-medium text-lg tracking-wider">
@@ -33,6 +47,16 @@
         <div class="p-4 text-gray-800">
             New Task
         </div>
+        <input 
+            type="text"
+            x-model="newTodoTitle"    
+        >
+        <button
+            @click="addTodo()"
+            class="bg-gray-100"
+        >
+            Add
+        </button>
     </footer>
 </div>
 
@@ -48,12 +72,12 @@
                     return;
                 }
 
-                this.todos.push({
-                    title: this.newTodoTitle,
-                    id: this.newTodoId,
-                });
+                this.todos.push(
+                    {
+                        title: this.newTodoTitle,
+                    }
+                );
 
-                this.newTodoId++;
                 this.newTodoTitle = "";
             },
             completeTodo(index) {
