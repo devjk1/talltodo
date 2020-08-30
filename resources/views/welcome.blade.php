@@ -22,12 +22,12 @@
                     :key="index"
                 >
                     <div 
-                        class="col-span-11"
+                        class="col-span-11 mx-4 my-1 bg-blue-500"
                         x-text="todo.title"
                     >
                     </div>
                     <input 
-                        class="col-span-1 ml-auto"
+                        class="inline-grid col-span-1 ml-auto mr-4 my-1 bg-red-500"
                         type="checkbox"
                         @change="completeTodo(index)"
                     >
