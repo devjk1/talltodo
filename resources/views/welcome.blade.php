@@ -6,9 +6,26 @@
     x-data="todo()"
 >
     <!-- TOP SECTION -->
-    <div class="bg-white-100 flex-grow">
+    <div class="bg-gray-100 flex-grow">
         <div class="p-4 text-4xl font-bold text-gray-800">
             My Tasks
+        </div>
+        
+        <div class="container mx-auto mt-8">
+            <!-- TODO -->
+            <div class="text-gray-400 font-medium text-lg tracking-wider">
+                TO-DO
+            </div>
+            <div class="border-2 border-gray-300 rounded-lg mt-2">
+                1
+            </div>
+            <!-- COMPLETED -->
+            <div class="mt-8 text-gray-400 font-medium text-lg tracking-wider">
+                COMPLETED
+            </div>
+            <div class="border border-gray-200 rounded-lg mt-2">
+                1
+            </div>
         </div>
     </div>
     <!-- FOOTER -->
