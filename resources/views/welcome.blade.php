@@ -24,7 +24,7 @@
                 >
                     <div class="flex items-center col-span-12 px-4 py-2">
                         <div 
-                            class="col-span-11"
+                            class="col-span-11 text-lg text-gray-700"
                             x-text="todo.title"
                         >
                         </div>
@@ -41,13 +41,13 @@
                 COMPLETED
             </div>
             <!-- COMPLETED LIST -->
-            <div class="border border-gray-200 rounded-lg mt-2">
+            <div class="flex flex-col border border-gray-200 rounded-lg mt-2">
                 <template
                     x-for="(todo, index) in completedTodos"
                     :key="index"
                 >
                     <div 
-                        class="line-through"
+                        class="line-through px-4 py-2 text-lg text-gray-400"
                         x-text="todo.title"
                     >
                     </div> 
