@@ -6,7 +6,7 @@
     x-data="todos()"
 >
     <!-- TOP SECTION -->
-    <div class="bg-gray-100 flex-grow">
+    <div class="bg-white flex-grow">
         <div class="p-4 text-4xl font-bold text-gray-900">
             My Tasks
         </div>
@@ -17,7 +17,7 @@
                 TO-DO
             </div>
             <!-- TODO LIST -->
-            <div class="grid grid-cols-12 border-2 border-gray-300 rounded-lg mt-2">
+            <div class="grid grid-cols-12 border-2 border-gray-300 rounded-lg mt-2 divide-y-2 divide-gray-300">
                 <template 
                     x-for="(todo, index) in todos"
                     :key="index"
@@ -41,7 +41,7 @@
                 COMPLETED
             </div>
             <!-- COMPLETED LIST -->
-            <div class="flex flex-col border border-gray-200 rounded-lg mt-2">
+            <div class="flex flex-col border border-gray-200 rounded-lg mt-2 divide-y divide-gray-200">
                 <template
                     x-for="(todo, index) in completedTodos"
                     :key="index"
@@ -62,7 +62,7 @@
         </div>
         <div class="flex mx-4 border-2 border-gray-300 rounded-lg">
             <input 
-                class="flex-grow rounded-l-lg"
+                class="flex-grow px-2 rounded-l-lg"
                 type="text"
                 x-model="newTodoTitle"    
             >
