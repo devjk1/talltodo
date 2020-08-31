@@ -7,7 +7,7 @@
 >
     <!-- TOP SECTION -->
     <div class="bg-gray-100 flex-grow">
-        <div class="p-4 text-4xl font-bold text-gray-800">
+        <div class="p-4 text-4xl font-bold text-gray-900">
             My Tasks
         </div>
         
@@ -47,7 +47,7 @@
                     :key="index"
                 >
                     <div 
-                        class="line-through px-4 py-2 text-lg text-gray-400"
+                        class="line-through px-4 py-2 text-lg text-gray-500"
                         x-text="todo.title"
                     >
                     </div> 
@@ -57,19 +57,22 @@
     </div>
     <!-- FOOTER -->
     <footer class="bg-gray-200 h-32">
-        <div class="p-4 text-gray-800">
+        <div class="px-4 pt-4 text-gray-900 text-lg">
             New Task
         </div>
-        <input 
-            type="text"
-            x-model="newTodoTitle"    
-        >
-        <button
-            @click="addTodo()"
-            class="bg-gray-100"
-        >
-            Add
-        </button>
+        <div class="flex mx-4 border-2 border-gray-300 rounded-lg">
+            <input 
+                class="flex-grow rounded-l-lg"
+                type="text"
+                x-model="newTodoTitle"    
+            >
+            <button
+                class="p-2 text-gray-800 rounded-r-lg bg-gray-100"
+                @click="addTodo()"
+            >
+                Add
+            </button>
+        </div>
     </footer>
 </div>
 
