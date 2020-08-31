@@ -16,29 +16,44 @@
             <div class="text-gray-400 font-medium text-lg tracking-wider">
                 TO-DO
             </div>
+            <!-- TODO LIST -->
             <div class="grid grid-cols-12 border-2 border-gray-300 rounded-lg mt-2">
                 <template 
                     x-for="(todo, index) in todos"
                     :key="index"
                 >
+                
                     <div 
-                        class="col-span-11 mx-4 my-1 bg-blue-500"
+                        class="col-span-10 px-4 py-1"
                         x-text="todo.title"
                     >
                     </div>
                     <input 
-                        class="inline-grid col-span-1 ml-auto mr-4 my-1 bg-red-500"
+                        class="block col-start-10 col-span-2"
                         type="checkbox"
                         @change="completeTodo(index)"
                     >
+             
+                    
+                    
                 </template>
             </div>
             <!-- COMPLETED -->
             <div class="mt-8 text-gray-400 font-medium text-lg tracking-wider">
                 COMPLETED
             </div>
+            <!-- COMPLETED LIST -->
             <div class="border border-gray-200 rounded-lg mt-2">
-                1
+                <template
+                    x-for="(todo, index) in completedTodos"
+                    :key="index"
+                >
+                    <div 
+                        class="line-through"
+                        x-text="todo.title"
+                    >
+                    </div> 
+                </template>
             </div>
         </div>
     </div>
