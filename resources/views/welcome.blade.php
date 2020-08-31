@@ -22,20 +22,18 @@
                     x-for="(todo, index) in todos"
                     :key="index"
                 >
-                
-                    <div 
-                        class="col-span-10 px-4 py-1"
-                        x-text="todo.title"
-                    >
-                    </div>
-                    <input 
-                        class="block col-start-10 col-span-2"
-                        type="checkbox"
-                        @change="completeTodo(index)"
-                    >
-             
-                    
-                    
+                    <div class="flex items-center col-span-12 px-4 py-2">
+                        <div 
+                            class="col-span-11"
+                            x-text="todo.title"
+                        >
+                        </div>
+                        <input 
+                            class="col-start-12 col-end-13 ml-auto"
+                            type="checkbox"
+                            @change="completeTodo(index)"
+                        >
+                    </div>                    
                 </template>
             </div>
             <!-- COMPLETED -->
