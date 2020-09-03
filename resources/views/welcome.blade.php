@@ -9,9 +9,6 @@
             My Tasks
         </div>
         <div class="container mx-auto mt-8">
-            <div class="text-gray-400 font-medium text-lg tracking-wider">
-                TO-DO
-            </div>
             <!-- INSERT LIST COMPONENT -->
             @livewire('todo-list')
         </div>
