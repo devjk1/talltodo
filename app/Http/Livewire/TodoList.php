@@ -19,4 +19,11 @@ class TodoList extends Component
 
         return view('livewire.todo-list');
     }
+
+    public function completeTodo($id)
+    {
+        $todo = Todo::find($id);
+        $todo->is_completed = true;
+        $todo->save();
+    }
 }

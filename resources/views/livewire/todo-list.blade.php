@@ -7,10 +7,11 @@
             >
                 {{ $todo->title }}
             </div>
+            <!-- Cannot pass in model to completeTodo() -->
             <input 
                 class="col-start-12 col-end-13 ml-auto"
                 type="checkbox"
-                @change="completeTodo(index)"
+                wire:change="completeTodo({{ $todo->id }})"
             >
         </div>
         @endforeach
