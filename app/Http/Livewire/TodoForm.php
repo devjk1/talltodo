@@ -20,5 +20,8 @@ class TodoForm extends Component
         $todo->title = $this->title;
         $todo->is_completed = false;
         $todo->save();
+
+        $this->emit('addedTodo');
+        $this->title = '';
     }
 }

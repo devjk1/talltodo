@@ -13,7 +13,7 @@
                 TO-DO
             </div>
             <!-- INSERT LIST COMPONENT -->
-            @livewire('todo-list', ['todos' => $todos])
+            @livewire('todo-list')
         </div>
     </div>
     <!-- FOOTER -->
